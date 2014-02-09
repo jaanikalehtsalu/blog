@@ -1,24 +1,46 @@
 -- phpMyAdmin SQL Dump
 -- version 3.5.2.2
+--- phpMyAdmin SQL Dump
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2013 at 10:20 AM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Generation Time: Feb 09, 2014 at 10:43 PM
+-- Server version: 5.5.34
+-- PHP Version: 5.4.22
 
 SET FOREIGN_KEY_CHECKS=0;
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+--
+-- Database: `blog`
+--
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+-- --------------------------------------------------------
 
 --
--- Database: `halo`
+-- Table structure for table `post`
 --
+
+DROP TABLE IF EXISTS `post`;
+CREATE TABLE IF NOT EXISTS `post` (
+  `post_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `post_subject` varchar(255) NOT NULL,
+  `post_text` text NOT NULL,
+  `post_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `user_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`post_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`post_id`, `post_subject`, `post_text`, `post_created`, `user_id`) VALUES
+(4, 'Esimene postitus', 'Siia tuleb sisu', '2014-02-09 20:47:52', 1),
+(5, 'Teine postitus', 'Veel sisu', '2014-02-09 20:48:19', 1);
 
 -- --------------------------------------------------------
 
@@ -41,8 +63,14 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`) VALUES
 (1, 'demo', 'demo', 0);
-SET FOREIGN_KEY_CHECKS=1;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `post`
+--
+ALTER TABLE `post`
+  ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+SET FOREIGN_KEY_CHECKS=1;
