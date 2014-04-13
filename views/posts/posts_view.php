@@ -10,3 +10,5 @@
         <hr>
     </div>
 </div>
+
+<?foreach ($tags as $tag):?><a href="<?=BASE_URL?>tags/view/<?=$tag['tag_name']?>"><span class="label-info" style="background-color: #5bc0de"><?=$tag['tag_name']?></span></a><?endforeach?>
