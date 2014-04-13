@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2014 at 03:12 PM
+-- Generation Time: Apr 13, 2014 at 03:40 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -101,7 +101,18 @@ CREATE TABLE IF NOT EXISTS `tag` (
   `tag_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `tag_name` varchar(25) NOT NULL,
   PRIMARY KEY (`tag_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `tag`
+--
+
+INSERT INTO `tag` (`tag_id`, `tag_name`) VALUES
+(1, 'elu'),
+(2, 'lugu'),
+(3, 'huvitavat'),
+(4, 'reis'),
+(5, 'blogi');
 
 -- --------------------------------------------------------
 

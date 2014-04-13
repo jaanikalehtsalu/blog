@@ -7,6 +7,7 @@ class posts extends Controller
         if (!empty($_POST))
             $this->save();
         $post_id = $this->params[0];
+        $this->post = get_first("SELECT * FROM post NATURAL JOIN user WHERE post_id='$post_id'");
         $this->post = get_one("SELECT * FROM post NATURAL JOIN user WHERE post_id='$post_id'");
         $this->tags = get_all("SELECT * FROM post_tags NATURAL JOIN tag WHERE post_id='$post_id'");
 
@@ -28,4 +29,16 @@ class posts extends Controller
 
 
     }
+}
+
+function index_ajax()
+{
+    echo "\$_POST:<br>";
+    var_dump($_POST);
+}
+
+function index_post()
+{
+    echo "\$_POST:<br>";
+    var_dump($_POST);
 }
