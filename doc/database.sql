@@ -1,9 +1,9 @@
--- phpMyAdmin SQL Dump
+-- p-- phpMyAdmin SQL Dump
 -- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2014 at 03:47 PM
+-- Generation Time: Apr 13, 2014 at 03:57 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -96,9 +96,14 @@ CREATE TABLE IF NOT EXISTS `post_tags` (
 
 INSERT INTO `post_tags` (`post_id`, `tag_id`) VALUES
 (3, 1),
+(4, 1),
+(5, 1),
 (3, 2),
+(4, 2),
 (5, 2),
-(4, 5),
+(3, 3),
+(3, 4),
+(3, 5),
 (5, 5);
 
 -- --------------------------------------------------------
