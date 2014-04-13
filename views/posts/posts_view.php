@@ -21,4 +21,4 @@
     </div>
 </div>
 
-<?foreach ($tags as $tag):?><a href="<?=BASE_URL?>tags/view/<?=$tag['tag_name']?>"><span class="label-info" style="background-color: #5bc0de"><?=$tag['tag_name']?></span></a><?endforeach?>
+<?foreach ($tags as $tag):?><a href="<?=BASE_URL?>tags/view/<?=$tag['tag_name']?>"><span class="label-info" style="background-color: #93de7e"><?=$tag['tag_name']?></span></a><?endforeach?>
